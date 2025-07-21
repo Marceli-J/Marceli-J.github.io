@@ -1,0 +1,4 @@
+#clock {text-decoration:none; border:none; position:sticky; float:right; margin-right:12px; margin-top:7px; font-size:22px;}
+@media screen and (max-width:500px) {
+    #clock {margin-right:0px; padding-bottom:7px; border-bottom: 2px solid rgba(210,230,230,0.9);}
+}

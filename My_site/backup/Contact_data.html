@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>OSP Budy Wielgoleskie</title>
+    <link rel="icon" type="image/x-icon" href="images/OSP-favicolon.jpg">
+    <style>
+    body {
+      color: white;
+      padding: 0px;
+      margin: 0px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .header {
+      display: block;
+      position: sticky;
+      text-align: center;
+      width: 100%;
+      padding: 1px 0px;
+      background-color: #2E6444;
+      color: #FFF;
+      text-decoration: none;
+    }
+    .nav ul {
+      overflow: hidden;
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      background-color: #444;
+      color: #FFF;
+    }
+    .nav ul li {float: left; border-bottom: 2px solid rgba(210,230,230,0.9);}
+    .nav ul li a, .nav ul .dropdown #dropbutton {
+      display: inline-block;
+      padding: 10px;
+      text-align: center;
+    }
+    a:link {
+      text-decoration: none;
+      color: #FFF;
+    }
+    a:visited {
+      text-decoration: underline #61A7B7 solid 3px;
+      color: #61A7B7;
+    }
+    a:hover{
+      text-decoration: none;
+      background-color: #343434;
+      cursor: pointer;
+    }
+    a:active {
+      color: rgba(190,220,190,0.8);
+      background-color: rgba(42,42,42,0.75);
+    }
+    #now-active {
+      color: #FAFFFA;
+      background-color: rgba(11,11,102,0.5);
+    }
+    .nav ul .dropdown {display: inline-block;}
+    .nav ul .dropdown .content {
+      display: none;
+      position: absolute;
+      min-width: 110px;
+      max-width: 250px;
+      background-color: #f3f3f3;
+      box-shadow: 2px 10px 16px 0px rgba(0,0,0,0.4);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .nav ul .dropdown .content a {
+      text-decoration: none;
+      padding: 10px 12px;
+      display: block;
+      color: black;
+      text-align: left;
+      overflow: scroll;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .nav ul:after, .row {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .nav ul .dropdown .content a {opacity:1;}
+    .nav ul .dropdown .content a:hover {background-color:#E8E8E8;}
+    .nav ul .dropdown:hover .content {display:block; opacity:1;}
+    .column-middle {
+      padding: 15px;
+      width: 36%;
+      margin-left: 33.33vw;
+      margin-right: 33.33vw;
+    }
+    .data, #address {
+      text-align: center;
+      position: relative;
+      display: block;
+      min-width: 90px;
+      width: 15%;
+      padding: 2px 10px;
+      background-color: rgba(255,204,84,0.5);
+      margin-bottom: 4px;
+      border-radius: 6px;
+      border-style: solid;
+      border-color: rgba(240,185,52,1);
+      border-width: 3px;
+      box-shadow: 2px 2px 6px 0px rgba(255,195,62,0.5);
+    }
+    #address ul {
+      list-style-type: none;
+      display: none;
+      position: absolute;
+      min-width: 200px;
+      width: 25%;
+      padding: 2px 10px;
+      background-color:rgba(255,190,61,0.6);
+      margin-bottom: 4px;
+      border-radius: 6px;
+      border-style: solid;
+      border-color: rgba(240,185,52,1);
+      border-width: 3px;
+      box-shadow: 2px 2px 6px 0px rgba(255,195,62,0.5);
+    }
+    #address:hover ul {display:inline-block; top:-14px; left:108%;}
+    /*REGON included below*/
+    .data-content {
+      margin: 0px;
+      text-align: center;
+      display: none;
+      position: absolute;
+      min-width: 172px;
+      width: 30%;
+      padding: 8px 12px;
+      background-color:rgba(255,190,61,0.6);
+      border-radius: 6px;
+      border-style: solid;
+      border-color: rgba(240,185,52,1);
+      border-width: 3px;
+      box-shadow: 2px 2px 6px 0px rgba(255,195,62,0.5);
+    }
+    #NIP {min-width: 132px;}
+    #KRS {min-width: 116px;}
+    .data:hover, #address:hover {display:inline-block; background-color:rgba(255,190,61,0.6);}
+    .data:hover .data-content {
+      top: 7px;
+      left: 108%;
+      display: inline-block;
+    }
+    #long {
+      top: 16px;
+      padding: 10px 12px 9px 12px;
+      width: 288px;
+    }
+    h2 {
+      text-align: center;
+      padding: 8px 12px;
+      background-color: rgba(255,204,84,0.5);
+      border-radius: 6px;
+      border-style: solid;
+      border-color: rgba(240,185,52,1);
+      border-width: 3px;
+      box-shadow: 2px 4px 10px 0px rgba(255,195,62,0.5);
+    }
+    .row {
+      background-image: url("images/star-base-opacity.jpg");
+      background-size: cover;
+      height: calc(100vh - 135px);
+      background-repeat: no-repeat;
+    }
+    @media screen and (max-height: 650px) {
+      .column-middle {
+        padding-bottom: 8px;
+        padding-top: 8px;
+        width: 100vw;
+        margin: 0px;
+      }
+      .data, #address {
+        width: 5vw;
+        display: inline-block;
+        float: left;
+        margin-left: 10px;
+      }
+      .data:hover #REGON {top:115%; left:-50%;}
+      .data:hover #KRS {top:115%; left:-19%;}
+      .data:hover #NIP {top:115%; left:-28.5%;}
+      #address:hover .address-data {top:100%; left:-8%;}
+      #long-top {width:150px;}
+      #long {top:115%; left:-49%;}
+    }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 style="text-shadow: 0px 2px 1px hsl(30, 100%, 30%), 1px 2px 4px hsl(30, 90%, 80%); color:hsl(55, 100%, 98.5%);"">OSP Budy Wielgoleskie</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">Strona Główna</a></li>
+        <li class="dropdown">
+          <span id="dropbutton">Aktualności</span>
+          <div class="content">
+            <a>10 07 2025</a>
+            <a>09 07 2025</a>
+          </div>
+        </li>
+        <li><a href="About_us.html">O nas</a></li>
+        <li><a href="historic_data.html">Dane historyczne</a></li>
+        <li><a id="now-active" href="Contact_data.html">Dane kontaktowe</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="column-middle">
+        <h2>Ochotnicza Straż Pożarna w Budach Wielgoleskich</h2>
+        <div class="content">
+          <div id="address"><p>Adres</p>
+            <ul class="address-data">
+                <li>Budy Wielgoleskie 50</li>
+                <li>05-334</li>
+            </ul>
+          </div>
+          <div class="data">
+            <p>NIP</p>
+            <p id="NIP" class="data-content"> 822 20 86 791</p>
+          </div>
+          <div class="data">
+            <p>REGON</p>
+            <p id="REGON" class="data-content"> 711 5654 6 000 000</p>
+          </div>
+          <div class="data">
+            <p>KRS</p>
+            <p id="KRS" class="data-content"> 0000128082</p>
+          </div>
+          <div id="long-top" class="data">
+            <p>Konto bankowe</p>
+            <p id="long" class="data-content"> 12 9226 0005 0042 2554 2000 0010</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

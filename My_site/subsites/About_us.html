@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <title>OSP Budy Wielgoleskie</title>
+    <link rel="icon" type="image/x-icon" href="images/OSP-favicolon.jpg">
+    <link rel="stylesheet" href="../Styles/base.css">
+    <style>
+    [class|="column"] {
+      float: left;
+      padding: 15px;
+    }
+    .column-side {width: 25%;}
+    .column-middle {width: 50%;}
+    .row {
+      background-image: url("../images/star-22-another-opacity.jpeg");
+      background-size: cover;
+      height: 125vh;
+      background-repeat: no-repeat;
+    }
+    @media screen and (max-width:500px) {
+      .nav ul li, .column-side, .column-middle {float:none; display:block; width:100%;}
+      .nav ul li, .nav ul .dropdown .dropdown-content a, .nav ul .dropdown .dropdown-content {text-align:center;}
+      .nav ul .dropdown .dropdown-content {margin-left:35vw;}
+    }
+    </style>
+    <link rel="stylesheet" href="../Styles/Clock.css">
+    <script src="../Scripts/Clock.js"></script>
+    <script src="../Scripts/dropdownContent.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 style="text-shadow: 0px 2px 1px hsl(30, 100%, 30%), 1px 2px 4px hsl(30, 90%, 80%); color:hsl(55, 100%, 98.5%);">OSP Budy Wielgoleskie</h1>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="../index.html">Strona Główna</a></li>
+        <li class="dropdown">
+          <span id="dropbutton" onclick="clicked_button()">Aktualności</span>
+          <div class="dropdown-content">
+            <a>10 07 2025</a>
+            <a>09 07 2025</a>
+          </div>
+        </li>
+        <li><a id="now-active" href="About_us.html">O nas</a></li>
+        <li><a href="historic_data.html">Dane historyczne</a></li>
+        <li><a href="Contact_data.html">Dane kontaktowe</a></li>
+        <li id="clock"></li>
+      </ul>
+    </div>
+    <div class="row" onclick="out()">
+      <div class="column-side">
+      <h2>Społeczność</h2>
+        <p>Działalność naszych druhów jest pozytywnie odbierana wśród lokalnej społeczności, o czym świadczy wzrost chętnych osób chcących wstąpić w nasze szeregi.</p>
+      </div>
+      <div class="column-middle">
+        <h2>Sukcesy</h2>
+        <p>Możemy pochwalić się sukcesami na szczeblu gminnym, powiatowym i wojewódzkim. Jednostka samodzielnie stara się pozyskiwać środki na swoją działalność. W 2019r. Zrealizowaliśmy projekt pt. „Pomagamy sercem, ratujemy z głową!” współfinansowany ze środków Województwa Mazowieckiego. Projekt polegał na zakupie podręcznych apteczek pierwszej pomocy oraz zestawów odblaskowych, które po pokazach pierwszej pomocy trafiły do uczestników. Projekt zakładał odbiorców tylko naszej miejscowości, ale jego atrakcyjność i promocja spowodowała, że zasięgiem objął również inne miejscowości.</p>
+      </div>
+      <div class="column-side">
+        <h2>Działaność</h2>
+        <p>OSP w Wielgolesie powstała w 1918r. Od początku swojej działalności dba o bezpieczeństwo lokalnej społeczności oraz rozwija jej działalność kulturową. Członkami jednostki są nie tylko panowie, ale również panie, młodzież i dzieci, wszyscy aktywnie działają w życiu straży.</p>
+      </div>
+    </div>
+  </body>
+</html>
